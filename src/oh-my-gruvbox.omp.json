@@ -33,10 +33,10 @@
           "leading_diamond": "\ue0b6",
           "properties": {
             "branch_icon": "",
-            "fetch_stash_count": true,
-            "fetch_status": true,
-            "fetch_upstream_icon": true,
-            "fetch_worktree_count": true
+            "fetch_stash_count": false,
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "fetch_worktree_count": false
           },
           "style": "diamond",
           "template": "<b>{{ .HEAD }}</b>",
@@ -61,20 +61,26 @@
           "type": "session",
           "style": "plain",
           "foreground": "p:corvette",
-          "template": " {{ if .Root }}<p:chocolate>\uedce</> {{ end }}{{ if not .Root }}<p:chocolate>\uedc5</> {{ end }}${USER^} "
+          "template": " {{ if .Root }}<p:chocolate>\uedce</> {{ end }}{{ if not .Root }}<p:chocolate>\uedc5</> {{ end }}"
         },
         {
           "foreground": "p:corvette",
           "properties": {
             "branch_icon": "",
-            "fetch_stash_count": true,
+            "fetch_stash_count": false,
             "fetch_status": true,
-            "fetch_upstream_icon": true,
-            "fetch_worktree_count": true
+            "fetch_upstream_icon": false,
+            "fetch_worktree_count": false
           },
           "style": "plain",
-          "template": "{{if gt (add .Working.Added  .Working.Deleted .Working.Changed) 0}}<p:chocolate>\uf01c</> {{add .Working.Added  .Working.Deleted .Working.Changed}}{{end}} ",
+          "template": "{{if gt (add .Working.Added  .Working.Deleted .Working.Changed) 0}}<p:sandal>\uf427</>{{end}} ",
           "type": "git"
+        },
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:corvette",
+          "template": "${USER^} "
         },
         {
           "foreground": "p:corvette",
